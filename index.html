@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ネコじゃんけん天国</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <canvas id="outer-bg"></canvas>
+
+  <h2 style="margin: 5px 0;">ネコじゃんけん天国</h2>
+  <div class="box">
+    上の<b>ボス猫の手</b>に勝てるレーンを探して <b>← ↓ ↑ →</b> でキャッチ！<br>
+    <span style="font-size:12px; color:#dfe6e9;">
+      <span class="color-dot" style="background:#ff7675;"></span>グー
+      <span class="color-dot" style="background:#ffeaa7;"></span>チョキ
+      <span class="color-dot" style="background:#74b9ff;"></span>パー
+      （目標：10,000点達成で勝利）
+    </span>
+  </div><br>
+  <div class="box" style="font-size:18px; font-weight:bold;">
+    SCORE: <span id="score">0</span> / 10000 | <span id="combo">0</span> ニャンボ
+  </div>
+  <button id="retry-btn" onclick="resetGame()">もう一度遊ぶ</button>
+
+  <div class="game-wrapper">
+    <div class="ear-left"><div class="ear-inner"></div></div>
+    <div class="ear-right"><div class="ear-inner"></div></div>
+    <div class="cat-tail"></div>
+    <canvas id="c" width="400" height="650"></canvas>
+
+    <!-- CSS造形の手と王冠のレイヤー -->
+    <div id="hand-layer">
+      <div id="boss-hand-el" class="css-hand boss-scale hand-scissors" style="left: 200px; top: 86px;">
+        <div class="palm"></div><div class="f1"></div><div class="f2"></div><div class="f3"></div><div class="f4"></div><div class="thumb"></div>
+      </div>
+      <div id="lane-hand-0" class="css-hand hand-rock" style="left: 50px; top: 222px;">
+        <div class="palm"></div><div class="f1"></div><div class="f2"></div><div class="f3"></div><div class="f4"></div><div class="thumb"></div>
+      </div>
+      <div id="lane-hand-1" class="css-hand hand-scissors" style="left: 150px; top: 222px;">
+        <div class="palm"></div><div class="f1"></div><div class="f2"></div><div class="f3"></div><div class="f4"></div><div class="thumb"></div>
+      </div>
+      <div id="lane-hand-2" class="css-hand hand-paper" style="left: 250px; top: 222px;">
+        <div class="palm"></div><div class="f1"></div><div class="f2"></div><div class="f3"></div><div class="f4"></div><div class="thumb"></div>
+      </div>
+      <div id="lane-hand-3" class="css-hand hand-rock" style="left: 350px; top: 222px;">
+        <div class="palm"></div><div class="f1"></div><div class="f2"></div><div class="f3"></div><div class="f4"></div><div class="thumb"></div>
+      </div>
+      <div id="css-crown">
+        <div class="p1"></div><div class="p2"></div><div class="p3"></div><div class="base"></div>
+      </div>
+    </div>
+  </div>
+
+<script src="./js/main.js"></script>
+</body>
+</html>
